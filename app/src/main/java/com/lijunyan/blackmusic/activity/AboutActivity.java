@@ -43,13 +43,13 @@ public class AboutActivity extends BaseActivity{
         startLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUrl("https://github.com/lijunyandev/MeetMusic");
+                openUrl("https://github.com/xujingguo58/multiMediaplayer");
             }
         });
         scoreLl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUrl("http://www.coolapk.com/apk/com.lijunyan.blackmusic");
+                openUrl("http://xujingguo.top/");
             }
         });
     }

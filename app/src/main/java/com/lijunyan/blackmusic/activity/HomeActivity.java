@@ -2,12 +2,15 @@ package com.lijunyan.blackmusic.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
@@ -15,25 +18,40 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.lijunyan.blackmusic.R;
 import com.lijunyan.blackmusic.adapter.HomeListViewAdapter;
 import com.lijunyan.blackmusic.database.DBManager;
 import com.lijunyan.blackmusic.entity.PlayListInfo;
+import com.lijunyan.blackmusic.fragment.VideoFragment;
 import com.lijunyan.blackmusic.service.MusicPlayerService;
 import com.lijunyan.blackmusic.util.Constant;
 import com.lijunyan.blackmusic.util.HttpUtil;
 import com.lijunyan.blackmusic.util.MyApplication;
 import com.lijunyan.blackmusic.util.MyMusicUtil;
 
+//zhihu
+//import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.zhihu.matisse.Matisse;
+import com.zhihu.matisse.MimeType;
+import com.zhihu.matisse.engine.impl.GlideEngine;
+import com.zhihu.matisse.engine.impl.PicassoEngine;
+import com.zhihu.matisse.filter.Filter;
+import com.zhihu.matisse.internal.entity.CaptureStrategy;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -47,6 +65,11 @@ public class HomeActivity extends PlayBarBaseActivity {
     private DrawerLayout mDrawerLayout;
     private NavigationView navView;
     private ImageView navHeadIv;
+    private View viewDivide;
+    private FrameLayout fragementPlayer;
+    private LinearLayout fixListLL;
+    private RelativeLayout videoPlayList;
+    private LinearLayout homeMyListAll;
     private LinearLayout localMusicLl;
     private LinearLayout lastPlayLl;
     private LinearLayout myLoveLl;
@@ -66,6 +89,16 @@ public class HomeActivity extends PlayBarBaseActivity {
     private long exitTime = 0;
     private boolean isStartTheme = false;
 
+    //fragment
+    private VideoFragment videoFragment;
+    private List<Fragment> fragments = new ArrayList<>(4);
+    private int REQUEST_CODE_CHOOSE = 23;
+    //float action button
+    FloatingActionButton showMusic;
+    FloatingActionButton showVideo;
+    FloatingActionButton showPicture;
+
+    private RecyclerView localRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +166,59 @@ public class HomeActivity extends PlayBarBaseActivity {
         Intent startIntent = new Intent(HomeActivity.this,MusicPlayerService.class);
         startService(startIntent);
 
+
+        //choose mode music/video/picture
+        showMusic.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //show
+                viewDivide.setVisibility(View.VISIBLE);
+                fragementPlayer.setVisibility(View.VISIBLE);
+                fixListLL.setVisibility(View.VISIBLE);
+                homeMyListAll.setVisibility(View.VISIBLE);
+                //videoPlayList.setVisibility(View.INVISIBLE);
+                localRecyclerView.setVisibility(View.INVISIBLE);
+
+            }
+        });
+        showVideo.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //hidden
+                viewDivide.setVisibility(View.INVISIBLE);
+                fragementPlayer.setVisibility(View.INVISIBLE);
+                fixListLL.setVisibility(View.INVISIBLE);
+                homeMyListAll.setVisibility(View.INVISIBLE);
+                //videoPlayList.setVisibility(View.VISIBLE);
+                localRecyclerView.setVisibility(View.VISIBLE);
+
+                if(videoFragment == null) {
+                    videoFragment = new VideoFragment();
+                    fragments.add(videoFragment);
+                }
+
+            }
+        });
+        showPicture.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //
+                Matisse.from(HomeActivity.this)
+                        .choose(MimeType.allOf())
+                        .countable(true)
+                        .capture(true)
+                        .captureStrategy(
+                                new CaptureStrategy(true, "com.zhihu.matisse.sample.fileprovider"))
+                        .maxSelectable(9)
+                        //.addFilter(new GifSizeFilter(320, 320, 5 * Filter.K * Filter.K))
+                        .gridExpectedSize(
+                                getResources().getDimensionPixelSize(R.dimen.grid_expected_size))
+                        .restrictOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+                        .thumbnailScale(0.85f)
+                        .imageEngine(new GlideEngine())
+                        .forResult(REQUEST_CODE_CHOOSE);
+            }
+        });
     }
 
     private void refreshNightModeTitle(){
@@ -158,6 +244,18 @@ public class HomeActivity extends PlayBarBaseActivity {
     }
 
     private void init(){
+        // float action button
+        showMusic = (FloatingActionButton) findViewById(R.id.showMusic);
+        showVideo = (FloatingActionButton) findViewById(R.id.showVideo);
+        showPicture = (FloatingActionButton) findViewById(R.id.showPicture);
+        // show or hidden
+        viewDivide = (View) findViewById(R.id.home_devider_view);
+        fragementPlayer = (FrameLayout) findViewById(R.id.fragment_playbar);
+        fixListLL = (LinearLayout) findViewById(R.id.fix_list_ll);
+        homeMyListAll = (LinearLayout) findViewById(R.id.home_my_list_ll);
+        //videoPlayList = (RelativeLayout) findViewById(R.id.video_play_list);
+        localRecyclerView = (RecyclerView) findViewById(R.id.local_recycler_view);
+
         localMusicLl = (LinearLayout) findViewById(R.id.home_local_music_ll);
         lastPlayLl = (LinearLayout) findViewById(R.id.home_recently_music_ll);
         myLoveLl = (LinearLayout) findViewById(R.id.home_my_love_music_ll);

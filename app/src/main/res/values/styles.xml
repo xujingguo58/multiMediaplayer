@@ -147,4 +147,10 @@
     <style name="PlaylistActivityTheme" parent="AppTheme">
     </style>
 
+    <!--munu style-->
+    <style name="menu_labels_style">
+        <item name="android:background">?attr/appbg</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
 </resources>

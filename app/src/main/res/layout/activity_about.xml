@@ -59,7 +59,7 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="lijunyandev@foxmail.com" />
+                android:text="xujingguo58@163.com" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="https://github.com/lijunyandev" />
+                android:text="https://github.com/xujingguo58" />
         </LinearLayout>
 
 
@@ -118,7 +118,7 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="前往我的github项目给个start" />
+                android:text="前往我的github项目给个star" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                 android:gravity="center_vertical|bottom"
                 android:paddingBottom="3dp"
                 android:paddingLeft="20dp"
-                android:text="给个评价" />
+                android:text="我的博客" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -147,7 +147,7 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="前往应用商店评价或评分" />
+                android:text="前往我的个人博客" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"

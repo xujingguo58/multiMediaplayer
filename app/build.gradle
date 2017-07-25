@@ -4,12 +4,12 @@ android {
     signingConfigs {
 
     }
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.lijunyan.blackmusic"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 26
         versionCode 2
         versionName "1.1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -39,4 +39,11 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.makeramen:roundedimageview:2.3.0'
     testCompile 'junit:junit:4.12'
+
+    //zhihu
+    compile 'com.zhihu.android:matisse:0.4.3'
+    //compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.1@aar'
+
+    // float button
+    compile 'com.getbase:floatingactionbutton:1.10.1'
 }

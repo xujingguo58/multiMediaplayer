@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.entity.AlbumInfo;
-
-import java.util.List;
 
 /**
  * Created by xujingguo on 2017/7/24.

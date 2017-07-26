@@ -12,11 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import top.xujingguo.multiMediaPlayer.R;
-import top.xujingguo.multiMediaPlayer.database.DBManager;
-import top.xujingguo.multiMediaPlayer.util.HttpUtil;
-import top.xujingguo.multiMediaPlayer.util.MyApplication;
-import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 
 import java.io.IOException;
 import java.util.Timer;
@@ -25,6 +20,11 @@ import java.util.TimerTask;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+import top.xujingguo.multiMediaPlayer.R;
+import top.xujingguo.multiMediaPlayer.database.DBManager;
+import top.xujingguo.multiMediaPlayer.util.HttpUtil;
+import top.xujingguo.multiMediaPlayer.util.MyApplication;
+import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 
 
 public class WelcomeActivity extends BaseActivity {

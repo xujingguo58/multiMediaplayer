@@ -2,13 +2,14 @@ package top.xujingguo.multiMediaPlayer.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
 import com.bumptech.glide.Glide;
-//import com.dl7.player.media.IjkPlayerView;
 import com.dl7.player.media.IjkPlayerView;
+
+//import com.dl7.player.media.IjkPlayerView;
 
 public class IjkFullscreenActivity extends AppCompatActivity {
 

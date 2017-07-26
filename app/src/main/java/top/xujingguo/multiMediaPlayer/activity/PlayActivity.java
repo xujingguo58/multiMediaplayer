@@ -21,6 +21,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Locale;
+
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.fragment.PlayBarFragment;
 import top.xujingguo.multiMediaPlayer.receiver.PlayerManagerReceiver;
@@ -29,8 +31,6 @@ import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.CustomAttrValueUtil;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 import top.xujingguo.multiMediaPlayer.view.PlayingPopWindow;
-
-import java.util.Locale;
 
 public class PlayActivity extends BaseActivity implements View.OnClickListener {
 

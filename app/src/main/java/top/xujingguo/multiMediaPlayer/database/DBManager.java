@@ -6,14 +6,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
 import top.xujingguo.multiMediaPlayer.entity.PlayListInfo;
 import top.xujingguo.multiMediaPlayer.util.ChineseToEnglish;
 import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DBManager {
 

@@ -14,6 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.fragment.AlbumFragment;
 import top.xujingguo.multiMediaPlayer.fragment.FolderFragment;
@@ -21,9 +24,6 @@ import top.xujingguo.multiMediaPlayer.fragment.SingerFragment;
 import top.xujingguo.multiMediaPlayer.fragment.SingleFragment;
 import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.view.MyViewPager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class LocalMusicActivity extends PlayBarBaseActivity {
 

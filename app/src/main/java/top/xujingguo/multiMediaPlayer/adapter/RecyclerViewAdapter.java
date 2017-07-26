@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
@@ -20,8 +22,6 @@ import top.xujingguo.multiMediaPlayer.service.MusicPlayerService;
 import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.CustomAttrValueUtil;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
-
-import java.util.List;
 
 /**
  * Created by xujingguo on 2017/7/24.

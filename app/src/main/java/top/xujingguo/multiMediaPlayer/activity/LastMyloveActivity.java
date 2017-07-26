@@ -25,6 +25,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.adapter.DividerItemDecoration;
 import top.xujingguo.multiMediaPlayer.adapter.RecyclerViewAdapter;
@@ -36,12 +43,6 @@ import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 import top.xujingguo.multiMediaPlayer.view.MusicPopMenuWindow;
 import top.xujingguo.multiMediaPlayer.view.SideBar;
-import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 /*
 *   最近播放和我喜爱 复用同一个Activity
 * 

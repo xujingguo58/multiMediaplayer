@@ -33,22 +33,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import top.xujingguo.multiMediaPlayer.R;
-import top.xujingguo.multiMediaPlayer.ScanVideo;
-import top.xujingguo.multiMediaPlayer.adapter.HomeListViewAdapter;
-import top.xujingguo.multiMediaPlayer.database.DBManager;
-import top.xujingguo.multiMediaPlayer.entity.PlayListInfo;
-import top.xujingguo.multiMediaPlayer.fragment.VideoFragment;
-import top.xujingguo.multiMediaPlayer.service.MusicPlayerService;
-import top.xujingguo.multiMediaPlayer.util.Constant;
-import top.xujingguo.multiMediaPlayer.util.HttpUtil;
-import top.xujingguo.multiMediaPlayer.util.MyApplication;
-import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
-
-//zhihu
-//import com.tbruyelle.rxpermissions2.RxPermissions;
-import top.xujingguo.multiMediaPlayer.videoAdapter;
-import top.xujingguo.multiMediaPlayer.videoInfo;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
@@ -61,6 +45,22 @@ import java.util.List;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+import top.xujingguo.multiMediaPlayer.R;
+import top.xujingguo.multiMediaPlayer.ScanVideo;
+import top.xujingguo.multiMediaPlayer.adapter.HomeListViewAdapter;
+import top.xujingguo.multiMediaPlayer.database.DBManager;
+import top.xujingguo.multiMediaPlayer.entity.PlayListInfo;
+import top.xujingguo.multiMediaPlayer.fragment.VideoFragment;
+import top.xujingguo.multiMediaPlayer.service.MusicPlayerService;
+import top.xujingguo.multiMediaPlayer.util.Constant;
+import top.xujingguo.multiMediaPlayer.util.HttpUtil;
+import top.xujingguo.multiMediaPlayer.util.MyApplication;
+import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
+import top.xujingguo.multiMediaPlayer.videoAdapter;
+import top.xujingguo.multiMediaPlayer.videoInfo;
+
+//zhihu
+//import com.tbruyelle.rxpermissions2.RxPermissions;
 
 public class HomeActivity extends PlayBarBaseActivity {
 

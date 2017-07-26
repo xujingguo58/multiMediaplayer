@@ -7,13 +7,13 @@ import android.media.MediaPlayer;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.File;
+
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.fragment.PlayBarFragment;
 import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 import top.xujingguo.multiMediaPlayer.util.UpdateUIThread;
-
-import java.io.File;
 
 
 public class PlayerManagerReceiver extends BroadcastReceiver {

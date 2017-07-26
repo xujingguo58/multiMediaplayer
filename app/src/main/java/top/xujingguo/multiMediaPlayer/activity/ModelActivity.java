@@ -26,6 +26,12 @@ import android.widget.RelativeLayout;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
+import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
 import top.xujingguo.multiMediaPlayer.receiver.PlayerManagerReceiver;
@@ -34,11 +40,6 @@ import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 import top.xujingguo.multiMediaPlayer.view.MusicPopMenuWindow;
 import top.xujingguo.multiMediaPlayer.view.SideBar;
-import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class ModelActivity extends PlayBarBaseActivity {
 

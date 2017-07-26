@@ -11,15 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.activity.ModelActivity;
 import top.xujingguo.multiMediaPlayer.adapter.SingerAdapter;
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.entity.SingerInfo;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by xujingguo on 2017/7/24.

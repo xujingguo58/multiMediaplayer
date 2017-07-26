@@ -21,6 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
+
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.adapter.PlaylistAdapter;
 import top.xujingguo.multiMediaPlayer.database.DBManager;
@@ -31,9 +35,6 @@ import top.xujingguo.multiMediaPlayer.service.MusicPlayerService;
 import top.xujingguo.multiMediaPlayer.util.Constant;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 import top.xujingguo.multiMediaPlayer.view.MusicPopMenuWindow;
-import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
-
-import java.util.List;
 
 public class  PlaylistActivity extends PlayBarBaseActivity {
 

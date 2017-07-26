@@ -11,6 +11,12 @@ import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.activity.ThemeActivity;
 import top.xujingguo.multiMediaPlayer.database.DBManager;
@@ -19,12 +25,6 @@ import top.xujingguo.multiMediaPlayer.entity.FolderInfo;
 import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
 import top.xujingguo.multiMediaPlayer.entity.SingerInfo;
 import top.xujingguo.multiMediaPlayer.service.MusicPlayerService;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by xujingguo on 2017/7/24.

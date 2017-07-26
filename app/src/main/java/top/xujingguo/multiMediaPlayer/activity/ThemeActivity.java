@@ -16,12 +16,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.R;
 import top.xujingguo.multiMediaPlayer.entity.ThemeInfo;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ThemeActivity extends BaseActivity {
     public static int THEME_SIZE = 11;

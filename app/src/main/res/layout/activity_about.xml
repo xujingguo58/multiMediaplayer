@@ -22,7 +22,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/multimedia" />
 
         <TextView
             android:id="@+id/about_version"

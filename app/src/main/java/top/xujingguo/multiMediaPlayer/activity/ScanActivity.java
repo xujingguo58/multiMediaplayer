@@ -18,6 +18,11 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import top.xujingguo.multiMediaPlayer.database.DBManager;
 import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
 import top.xujingguo.multiMediaPlayer.service.MusicPlayerService;
@@ -27,11 +32,6 @@ import top.xujingguo.multiMediaPlayer.util.CustomAttrValueUtil;
 import top.xujingguo.multiMediaPlayer.util.MyMusicUtil;
 import top.xujingguo.multiMediaPlayer.util.SelectorUtil;
 import top.xujingguo.multiMediaPlayer.view.ScanView;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * 考虑本地没有歌曲的情况（待处理）

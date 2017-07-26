@@ -17,14 +17,15 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import top.xujingguo.multiMediaPlayer.R;
-import top.xujingguo.multiMediaPlayer.database.DBManager;
-import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
-import top.xujingguo.multiMediaPlayer.entity.PlayListInfo;
 import com.mcxtzhang.swipemenulib.SwipeMenuLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import top.xujingguo.multiMediaPlayer.R;
+import top.xujingguo.multiMediaPlayer.database.DBManager;
+import top.xujingguo.multiMediaPlayer.entity.MusicInfo;
+import top.xujingguo.multiMediaPlayer.entity.PlayListInfo;
 
 /**
  * Created by xujingguo on 2017/7/24.

@@ -6,16 +6,16 @@
 
 ### App效果图
 
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/home.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/home_nav.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/theme.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/local_music.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/scan.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/playlist.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/playing.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/floatbutton.png)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/music.png)
-![](https://github.com/xujingguo58/multiMediaplayer/tree/master/pic/picture.png)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/home.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/home_nav.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/theme.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/local_music.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/scan.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/playlist.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/playing.jpg)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/floatbutton.png)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/music.png)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/picture.png)
 
 
 

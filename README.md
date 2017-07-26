@@ -13,8 +13,8 @@
 ![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/scan.jpg)
 ![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/playlist.jpg)
 ![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/playing.jpg)
-![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/floatbutton.png)
-![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/music.png)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/float.png)
+![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/video.png)
 ![](https://github.com/xujingguo58/multiMediaplayer/blob/master/pic/picture.png)
 
 

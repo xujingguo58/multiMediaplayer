@@ -7,11 +7,11 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.0"
     defaultConfig {
-        applicationId "com.lijunyan.blackmusic"
+        applicationId "top.xujingguo.multiMediaPlayer"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 2
-        versionName "1.1.0"
+        versionName "1.2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

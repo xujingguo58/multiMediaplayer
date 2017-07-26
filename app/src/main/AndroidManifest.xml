@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lijunyan.blackmusic">
+    package="top.xujingguo.multiMediaPlayer">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -10,15 +10,15 @@
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".util.MyApplication"
+        android:name="top.xujingguo.multiMediaPlayer.util.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/multimedia"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,56 +27,56 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.HomeActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.HomeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ScanActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.ScanActivity"
             android:label="@string/scan_music"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.LocalMusicActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.LocalMusicActivity"
             android:label="@string/local_music"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <service
-            android:name=".service.MusicPlayerService"
+            android:name="top.xujingguo.multiMediaPlayer.service.MusicPlayerService"
             android:enabled="true"
             android:exported="true" />
 
         <receiver
-            android:name=".receiver.PlayerManagerReceiver"
+            android:name="top.xujingguo.multiMediaPlayer.receiver.PlayerManagerReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".activity.PlayActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.PlayActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/PlaylistActivityTheme" />
         <activity
-            android:name=".activity.LastMyloveActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.LastMyloveActivity"
             android:label="@string/last_play"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.PlaylistActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.PlaylistActivity"
             android:screenOrientation="portrait"
             android:theme="@style/PlaylistActivityTheme" />
         <activity
-            android:name=".activity.ModelActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.ModelActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ThemeActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.ThemeActivity"
             android:label="@string/theme_center"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.AboutActivity"
+            android:name="top.xujingguo.multiMediaPlayer.activity.AboutActivity"
             android:label="@string/about" />
-        <activity android:name=".activity.IjkFullscreenActivity"></activity>
+        <activity android:name="top.xujingguo.multiMediaPlayer.activity.IjkFullscreenActivity"></activity>
     </application>
 
 </manifest>

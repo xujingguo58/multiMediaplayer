@@ -48,7 +48,7 @@ import java.util.List;
 
 public class VideoFragment extends Fragment {
 
-    private static final String TAG = "SingleFragment";
+    private static final String TAG = "VideoFragment";
     private RelativeLayout playModeRl;
     private ImageView playModeIv;
     private TextView playModeTv;

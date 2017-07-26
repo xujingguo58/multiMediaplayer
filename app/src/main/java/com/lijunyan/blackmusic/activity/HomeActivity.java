@@ -19,8 +19,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -30,7 +32,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.lijunyan.blackmusic.R;
+import com.lijunyan.blackmusic.ScanVideo;
 import com.lijunyan.blackmusic.adapter.HomeListViewAdapter;
 import com.lijunyan.blackmusic.database.DBManager;
 import com.lijunyan.blackmusic.entity.PlayListInfo;
@@ -43,11 +47,11 @@ import com.lijunyan.blackmusic.util.MyMusicUtil;
 
 //zhihu
 //import com.tbruyelle.rxpermissions2.RxPermissions;
+import com.lijunyan.blackmusic.videoAdapter;
+import com.lijunyan.blackmusic.videoInfo;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
-import com.zhihu.matisse.engine.impl.PicassoEngine;
-import com.zhihu.matisse.filter.Filter;
 import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
 import java.io.IOException;
@@ -82,8 +86,11 @@ public class HomeActivity extends PlayBarBaseActivity {
     private ImageView myPLArrowIv;
     private ImageView myPLAddIv;
     private ListView listView;
+    private ListView videoListView;
+    private GridView videoGridView;
     private HomeListViewAdapter adapter;
     private List<PlayListInfo> playListInfos;
+    private List<videoInfo> videoinfoList = new ArrayList<videoInfo>();
     private int count;
     private boolean isOpenMyPL = false; //标识我的歌单列表打开状态
     private long exitTime = 0;
@@ -94,14 +101,18 @@ public class HomeActivity extends PlayBarBaseActivity {
     private List<Fragment> fragments = new ArrayList<>(4);
     private int REQUEST_CODE_CHOOSE = 23;
     //float action button
-    FloatingActionButton showMusic;
-    FloatingActionButton showVideo;
-    FloatingActionButton showPicture;
+    private FloatingActionButton showMusic;
+    private FloatingActionButton showVideo;
+    private FloatingActionButton showPicture;
+    private FloatingActionsMenu multiActions;
 
     private RecyclerView localRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        videoinfoList = new ScanVideo(this).getList();
+
         setContentView(R.layout.activity_home);
         dbManager = DBManager.getInstance(HomeActivity.this);
         toolbar = (Toolbar)findViewById(R.id.home_activity_toolbar);
@@ -177,25 +188,49 @@ public class HomeActivity extends PlayBarBaseActivity {
                 fixListLL.setVisibility(View.VISIBLE);
                 homeMyListAll.setVisibility(View.VISIBLE);
                 //videoPlayList.setVisibility(View.INVISIBLE);
-                localRecyclerView.setVisibility(View.INVISIBLE);
+                videoListView.setVisibility(View.INVISIBLE);
+                videoGridView.setVisibility(View.INVISIBLE);
+                //localRecyclerView.setVisibility(View.INVISIBLE);
+                ActionBar actionBar = getSupportActionBar();
+                if (actionBar != null) {
+                    actionBar.setDisplayHomeAsUpEnabled(true);
+                    actionBar.setTitle(Constant.LABEL_MUSIC);
+                }
+                multiActions.collapse();
 
             }
         });
         showVideo.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //hidden
                 viewDivide.setVisibility(View.INVISIBLE);
                 fragementPlayer.setVisibility(View.INVISIBLE);
                 fixListLL.setVisibility(View.INVISIBLE);
                 homeMyListAll.setVisibility(View.INVISIBLE);
                 //videoPlayList.setVisibility(View.VISIBLE);
-                localRecyclerView.setVisibility(View.VISIBLE);
+                videoListView.setVisibility(View.VISIBLE);
+                videoGridView.setVisibility(View.VISIBLE);
+                //localRecyclerView.setVisibility(View.VISIBLE);
 
-                if(videoFragment == null) {
-                    videoFragment = new VideoFragment();
-                    fragments.add(videoFragment);
+                //toolbar = (Toolbar)findViewById(R.id.home_activity_toolbar);
+                //setSupportActionBar(toolbar);
+                ActionBar actionBar = getSupportActionBar();
+                if (actionBar != null) {
+                    actionBar.setDisplayHomeAsUpEnabled(true);
+                    actionBar.setTitle(Constant.LABEL_VIDEO);
                 }
+
+//                videoAdapter videoadapter = new videoAdapter(HomeActivity.this,R.layout.video_item,videoinfoList);
+//                final ListView videoListView = (ListView) findViewById(R.id.video_list_view);
+//                videoListView.setAdapter(videoadapter);
+
+                videoAdapter videoadapter2 = new videoAdapter(HomeActivity.this,R.layout.video_item,videoinfoList);
+                final GridView videoGridView = (GridView) findViewById(R.id.video_grid_view);
+                videoGridView.setAdapter(videoadapter2);
+
+                multiActions.collapse();
 
             }
         });
@@ -217,6 +252,21 @@ public class HomeActivity extends PlayBarBaseActivity {
                         .thumbnailScale(0.85f)
                         .imageEngine(new GlideEngine())
                         .forResult(REQUEST_CODE_CHOOSE);
+                multiActions.collapse();
+            }
+        });
+
+        videoGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                videoInfo videoinfo = videoinfoList.get(i);
+                //Toast.makeText(HomeActivity.this,videoinfo.getVideoName(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                //Log.w("video path",videoinfo.getPath());
+                intent.putExtra("videoPath",videoinfo.getPath());
+                intent.putExtra("videoName",videoinfo.getVideoName());
+                intent.setClass(HomeActivity.this,IjkFullscreenActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -244,7 +294,13 @@ public class HomeActivity extends PlayBarBaseActivity {
     }
 
     private void init(){
+
+
+        //video listView
+        videoListView = (ListView) findViewById(R.id.video_list_view);
+        videoGridView = (GridView) findViewById(R.id.video_grid_view);
         // float action button
+        multiActions = (FloatingActionsMenu) findViewById(R.id.multiple_actions);
         showMusic = (FloatingActionButton) findViewById(R.id.showMusic);
         showVideo = (FloatingActionButton) findViewById(R.id.showVideo);
         showPicture = (FloatingActionButton) findViewById(R.id.showPicture);
